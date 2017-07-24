@@ -29,6 +29,25 @@ router.post('/login', (req, res, next) => {
     .catch(next);
 });
 
+router.post('/signup', (req, res, next) => {
+  User.create(req.body)
+    .then(user => {
+      req.login(user, err => {
+        if (err) next(err);
+        else res.json(user);
+      });
+    })
+    .catch(next);
+});
+
+router.post('/logout', (req, res, next) => {
+  req.logout();
+  res.sendStatus(200);
+});
+
+router.get('/me', (req, res, next) => {
+  res.json(req.user);
+});
 
 module.exports = router;
 
