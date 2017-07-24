@@ -1,7 +1,8 @@
-export default reducer = function (state = {}, action) {
+function reducer (state = {}, action) {
   return state;
 }
 
+export default reducer;
 //ACTION TYPES
 
 //ACTION CREATORS
