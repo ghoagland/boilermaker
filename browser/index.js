@@ -1,7 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import store from './store';
 
 ReactDOM.render(
-  <div>Hello world!</div>,
-  document.getElementById('app') // make sure this is the same as the id of the div in your index.html
+  <Provider store={store}>
+    {/* rest of your app goes here! */}
+    <div>the thing is working!!!</div>
+  </Provider>,
+  document.getElementById('yourApp')
 );
